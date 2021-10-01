@@ -2,8 +2,6 @@ const testcode = (code1, useDebugger) => {
   if (useDebugger) {
     debugger;
   }
-
-
   console.log("Start");
   //console.log(a);
   if (code1) {
@@ -16,6 +14,14 @@ const testcode = (code1, useDebugger) => {
   }
   //console.log(a);
   //var a;
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
 
   let myAnimal = "dog";
   if (myAnimal == "Dog") {
