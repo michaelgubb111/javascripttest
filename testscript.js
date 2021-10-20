@@ -65,6 +65,9 @@ const runcode = (code1) =>{
   console.log("do all func to all",doAllFuncToAll1(myFuncArray,myNumbers));
   // Apply every function to all members, returns array same length as functions, containg array of numbers passed into that function
   console.log("do all func to all",doAllFuncToAll2(myFuncArray,myNumbers));
+
+
+  // Can add new function to myFuncArray
   const makeNegativeFunc = (input) => {
     return -1*input;
   }
