@@ -6,7 +6,56 @@ const testcode = (code1, useDebugger) => {
 }
 
 const runcode = (code1) =>{
-  console.log("Start");
+
+
+  const squareFunc = (input) => {
+    return input*input;
+  };
+  const addOneFunc = (input) => {
+    return input+1;
+  };
+  const returnDogFunc = (input) =>{
+    return "Dog";
+  };
+
+  const myFuncArray = [squareFunc,addOneFunc,returnDogFunc];
+
+  const myNumbers = [0,1,2,3,4,5,6,7,8,9,10];
+
+  const doFunc = (fArray,fInput,fNumber) => {
+    if (typeof(fArray) === "function"){return fArray(fInput)};
+    return fArray[fNumber](fInput);
+  };
+  const doAllFunc = (fArray,fInput) => {
+    if (typeof(fArrays) === "function"){return fArray(fInput)};
+    return fArray.map(x => x(fInput));
+  };
+  const doFuncToAll = (fArray,fInputs,fNumber) => {
+    if (typeof(fArray) === "function"){return fInputs.map(x => fArray(x))};
+    return fInputs.map(x => fArray[fNumber](x));
+  };
+  const doAllFuncToAll1 = (fArray,fInputs) => {
+    return fInputs.map(x => doAllFunc(fArray,x));
+  };
+  const doAllFuncToAll2 = (fArray,fInputs) => {
+    return fArray.map(x => doFuncToAll(x,fInputs));
+  };
+
+  // Pass 5 to function 0 (squareFunc)
+  console.log("5 into func0",doFunc(myFuncArray,5,0));
+  // Pass 5 to function 1 (addOneFunc)
+  console.log("5 into func1",doFunc(myFuncArray,5,1));
+  // Map "do (3)" to array of functions
+  console.log("3 into all func",doAllFunc(myFuncArray,3));
+  console.log("do func 0 to all",doFuncToAll(myFuncArray,myNumbers,0));
+  console.log("do all func to all",doAllFuncToAll1(myFuncArray,myNumbers));
+  console.log("do all func to all",doAllFuncToAll2(myFuncArray,myNumbers));
+  const makeNegative = (input) => {
+    return -1*input;
+  }
+  myFuncArray.push(makeNegative);
+  console.log("do all func to all with extra function",doAllFuncToAll2(myFuncArray,myNumbers));
+  /*console.log("Start");
   //console.log(a);
   if (code1) {
     let a;
@@ -55,5 +104,5 @@ const runcode = (code1) =>{
   }
 
 
-  console.log("Finish");
+  console.log("Finish");*/
 };
