@@ -47,8 +47,8 @@ const runcode = (code1) =>{
   console.log("5 into func1",doFunc(myFuncArray,5,1));
   // Pass 5 to function 2 (addOneFunc)
   console.log("5 into func2",doFunc(myFuncArray,5,2));
-  // Map "function(3)" to array of functions
-  console.log("3 into all func",doAllFunc(myFuncArray,3));
+  // Map "function(7)" to array of functions
+  console.log("7 into all func",doAllFunc(myFuncArray,7));
   // Map function 0 to myNumbers
   console.log("do func 0 to all",doFuncToAll(myFuncArray,myNumbers,0));
   // Apply every function to all members of myNumbers, returns array same length as numbers, containing array of functions applied to that number
