@@ -45,16 +45,26 @@ const runcode = (code1) =>{
   console.log("5 into func0",doFunc(myFuncArray,5,0));
   // Pass 5 to function 1 (addOneFunc)
   console.log("5 into func1",doFunc(myFuncArray,5,1));
-  // Map "do (3)" to array of functions
+  // Pass 5 to function 2 (addOneFunc)
+  console.log("5 into func2",doFunc(myFuncArray,5,2));
+  // Map "function(3)" to array of functions
   console.log("3 into all func",doAllFunc(myFuncArray,3));
+  // Map function 0 to myNumbers
   console.log("do func 0 to all",doFuncToAll(myFuncArray,myNumbers,0));
+  // Apply every function to all members of myNumbers, returns array same length as numbers, containing array of functions applied to that number
   console.log("do all func to all",doAllFuncToAll1(myFuncArray,myNumbers));
+  // Apply every function to all members, returns array same length as functions, containg array of numbers passed into that function
   console.log("do all func to all",doAllFuncToAll2(myFuncArray,myNumbers));
-  const makeNegative = (input) => {
+  const makeNegativeFunc = (input) => {
     return -1*input;
   }
-  myFuncArray.push(makeNegative);
+  myFuncArray.push(makeNegativeFunc);
   console.log("do all func to all with extra function",doAllFuncToAll2(myFuncArray,myNumbers));
+
+
+
+
+  //
   /*console.log("Start");
   //console.log(a);
   if (code1) {
