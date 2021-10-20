@@ -21,25 +21,35 @@ const runcode = (code1) =>{
   const myFuncArray = [squareFunc,addOneFunc,returnDogFunc];
 
   const myNumbers = [0,1,2,3,4,5,6,7,8,9,10];
-
+  // doFunc: lookup function in fArray using fNumber, return function(fInput)
   const doFunc = (fArray,fInput,fNumber) => {
     if (typeof(fArray) === "function"){return fArray(fInput)};
     return fArray[fNumber](fInput);
   };
+
+  // doAllFunc: return array of function(fInput) for all functions in fArray
   const doAllFunc = (fArray,fInput) => {
     if (typeof(fArrays) === "function"){return fArray(fInput)};
     return fArray.map(x => x(fInput));
   };
+
+  // doFuncToAll: lookup function in fArray using fNumber, return array of function(x) for all x in fInputs
   const doFuncToAll = (fArray,fInputs,fNumber) => {
     if (typeof(fArray) === "function"){return fInputs.map(x => fArray(x))};
     return fInputs.map(x => fArray[fNumber](x));
   };
+
+  // doAllFuncToAll1: for every x in fInputs, return array of function(x) for every function in fArray
   const doAllFuncToAll1 = (fArray,fInputs) => {
     return fInputs.map(x => doAllFunc(fArray,x));
   };
+
+  // doAllFuncToAll2: for every function in fArray, return array of function(x) for every x in fInputs
   const doAllFuncToAll2 = (fArray,fInputs) => {
     return fArray.map(x => doFuncToAll(x,fInputs));
   };
+
+  // Note: doAllFuncToAll1 and doAllFuncToAll2 return the same values, but structured differently
 
   // Pass 5 to function 0 (squareFunc)
   console.log("5 into func0",doFunc(myFuncArray,5,0));
