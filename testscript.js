@@ -25,19 +25,19 @@ const runcode = (code1) =>{
   const myNumbers = [0,1,2,3,4,5,6,7,8,9,10];
   // doFunc: lookup function in fArray using fNumber, return function(singleInput)
   const doFunc = (fArray,singleInput,fNumber) => {
-    if (typeof(fArray) === "function"){return fArray(singleInput)};
+    if (typeof(fArray) === "function"){return fArray(singleInput)}; // If function instead of array passed in evaluate function
     return fArray[fNumber](singleInput);
   };
 
   // doAllFunc: return array of function(singleInput) for all functions in fArray
   const doAllFunc = (fArray,singleInput) => {
-    if (typeof(fArray) === "function"){return fArray(singleInput)};
+    if (typeof(fArray) === "function"){return fArray(singleInput)}; // If function instead of array passed in evaluate function
     return fArray.map(f => f(singleInput));
   };
 
   // doFuncToAll: lookup function in fArray using fNumber, return array of function(x) for all x in arrayInputs
   const doFuncToAll = (fArray,arrayInputs,fNumber) => {
-    if (typeof(fArray) === "function"){return arrayInputs.map(x => fArray(x))};
+    if (typeof(fArray) === "function"){return arrayInputs.map(x => fArray(x))}; // If function instead of array passed in evaluate function
     return arrayInputs.map(x => fArray[fNumber](x));
   };
 
