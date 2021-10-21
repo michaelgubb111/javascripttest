@@ -77,7 +77,7 @@ const runcode = (code1) =>{
   console.log("do all func to all with extra function",doAllFuncToAll2(myFuncArray,myNumbers));
 
   // Can filter
-  console.log(doAllFuncToAll1(myFuncArray,myNumbers).filter( x => {
+  console.log("filter results for numbers that when squared are less than 50", doAllFuncToAll1(myFuncArray,myNumbers).filter( x => {
       if(x[0] < 50){return true};
         return false;
         }));
