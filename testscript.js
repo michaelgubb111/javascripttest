@@ -6,8 +6,9 @@ const testcode = (code1, useDebugger) => {
 }
 
 const runcode = (code1) =>{
+  // If using debugger and stepping into maps, adding watches for: x, f and fArray could be helpful
 
-
+  // Create functions to use
   const squareFunc = (input) => {
     return input*input;
   };
@@ -17,9 +18,10 @@ const runcode = (code1) =>{
   const returnDogFunc = (input) =>{
     return "Dog";
   };
-
+  
+  // Array of functions
   const myFuncArray = [squareFunc,addOneFunc,returnDogFunc];
-
+  // Array of numbers to pass into functions
   const myNumbers = [0,1,2,3,4,5,6,7,8,9,10];
   // doFunc: lookup function in fArray using fNumber, return function(singleInput)
   const doFunc = (fArray,singleInput,fNumber) => {
@@ -30,7 +32,7 @@ const runcode = (code1) =>{
   // doAllFunc: return array of function(singleInput) for all functions in fArray
   const doAllFunc = (fArray,singleInput) => {
     if (typeof(fArray) === "function"){return fArray(singleInput)};
-    return fArray.map(x => x(singleInput));
+    return fArray.map(f => f(singleInput));
   };
 
   // doFuncToAll: lookup function in fArray using fNumber, return array of function(x) for all x in arrayInputs
@@ -46,7 +48,7 @@ const runcode = (code1) =>{
 
   // doAllFuncToAll2: return array: for every function in fArray, array of function(x) for every x in arrayInputs
   const doAllFuncToAll2 = (fArray,arrayInputs) => {
-    return fArray.map(x => doFuncToAll(x,arrayInputs));
+    return fArray.map(f => doFuncToAll(f,arrayInputs));
   };
 
   // Note: doAllFuncToAll1 and doAllFuncToAll2 return the same values, but structured differently
@@ -66,7 +68,7 @@ const runcode = (code1) =>{
   console.log("do all func to all type 1",doAllFuncToAll1(myFuncArray,myNumbers));
   // Apply every function to all members, returns array same length as functions, containg array of numbers passed into that function
   console.log("do all func to all type 2",doAllFuncToAll2(myFuncArray,myNumbers));
-  // doAllFuncToAll1 and doAllFuncToAll2 return the same value with swapped indices
+  // Show how doAllFuncToAll1 and doAllFuncToAll2 return the same value with swapped indices
   console.log("type1[7][0] and type2[0][7]",doAllFuncToAll1(myFuncArray,myNumbers)[7][0],doAllFuncToAll2(myFuncArray,myNumbers)[0][7]);
 
   // Can add new function to myFuncArray
@@ -77,67 +79,13 @@ const runcode = (code1) =>{
 
   console.log("do all func to all with extra function",doAllFuncToAll2(myFuncArray,myNumbers));
 
-  // Can filter
-  console.log("filter results for numbers that when squared are less than 50", doAllFuncToAll1(myFuncArray,myNumbers).filter( x => {
-      if(x[0] < 50){return true};
+  // Can filter 
+  console.log("filter results for numbers that when squared are greater than 6 and less than 50", doAllFuncToAll1(myFuncArray,myNumbers).filter( x => {
+      if((x[0] > 6)&&(x[0] < 50)){return true};
         return false;
-        }));
+  }));
 
+  // Using slice in map to do the same for type2 (indices hard coded, more steps required to find indices with code)
+  console.log("filter results (using slice and indices) for numbers that when squared are greater than 6 and less than 50", doAllFuncToAll2(myFuncArray,myNumbers).map(x => x.slice(3,-3)))
 
-
-
-
-
-
-  //
-  /*console.log("Start");
-  //console.log(a);
-  if (code1) {
-    let a;
-    console.log(a);
-    //var a;
-    //let a;
-    a = 5;
-    console.log(a);
-  }
-  //console.log(a);
-  //var a;
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-
-  let myAnimal = "dog";
-  if (myAnimal === "Dog") {
-    console.log("My animal is Dog");
-
-    
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    const a = "5";
-    console.log(a,a==5,a===5);
-
-
-  }
-  //
-  if (myAnimal === "dog") {
-    console.log("My animal is dog");
-    let a = "5";
-    console.log(a,a==5,a===5);
-
-
-  }
-  const b = 7;
-
-  console.log("Finish");*/
 };
