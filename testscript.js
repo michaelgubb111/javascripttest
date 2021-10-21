@@ -55,11 +55,11 @@ const runcode = (code1) =>{
   // i.e. A[i][j] === B[j][i] if A = doAllFuncToAll1(f,data) and B = doAllFuncToAll2(f,data)
 
   // Pass 5 to function 0 (squareFunc)
-  console.log("5 into func0 using doFund then directly",doFunc(myFuncArray,5,0),squareFunc(5));
+  console.log("5 into func0 using doFunc then directly",doFunc(myFuncArray,5,0),squareFunc(5));
   // Pass 5 to function 1 (addOneFunc)
-  console.log("5 into func1 using doFund then directly",doFunc(myFuncArray,5,1),addOneFunc(5));
+  console.log("5 into func1 using doFunc then directly",doFunc(myFuncArray,5,1),addOneFunc(5));
   // Pass 5 to function 2 (addOneFunc)
-  console.log("5 into func2 using doFund then directly",doFunc(myFuncArray,5,2),returnDogFunc(5));
+  console.log("5 into func2 using doFunc then directly",doFunc(myFuncArray,5,2),returnDogFunc(5));
   // Map "function(7)" to array of functions
   console.log("7 into all func",doAllFunc(myFuncArray,7));
   // Map function 0 to myNumbers
