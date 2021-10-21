@@ -39,12 +39,12 @@ const runcode = (code1) =>{
     return arrayInputs.map(x => fArray[fNumber](x));
   };
 
-  // doAllFuncToAll1: for every x in arrayInputs, return array of function(x) for every function in fArray
+  // doAllFuncToAll1: return array: for every x in arrayInputs, array of function(x) for every function in fArray
   const doAllFuncToAll1 = (fArray,arrayInputs) => {
     return arrayInputs.map(x => doAllFunc(fArray,x));
   };
 
-  // doAllFuncToAll2: for every function in fArray, return array of function(x) for every x in arrayInputs
+  // doAllFuncToAll2: return array: for every function in fArray, array of function(x) for every x in arrayInputs
   const doAllFuncToAll2 = (fArray,arrayInputs) => {
     return fArray.map(x => doFuncToAll(x,arrayInputs));
   };
