@@ -72,7 +72,17 @@ const runcode = (code1) =>{
     return -1*input;
   }
   myFuncArray.push(makeNegativeFunc);
+
   console.log("do all func to all with extra function",doAllFuncToAll2(myFuncArray,myNumbers));
+
+  // Can filter
+  console.log(doAllFuncToAll1(myFuncArray,myNumbers).filter( x => {
+      if(x[0] < 50){return true};
+        return false;
+        }));
+
+
+
 
 
 
