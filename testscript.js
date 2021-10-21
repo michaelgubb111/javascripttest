@@ -64,9 +64,9 @@ const runcode = (code1) =>{
   console.log("7 into all func",doAllFunc(myFuncArray,7));
   // Map function 0 to myNumbers
   console.log("do func 0 to all",doFuncToAll(myFuncArray,myNumbers,0));
-  // Apply every function to all members of myNumbers, returns array same length as numbers, containing array of functions applied to that number
+  // Apply every function in myFuncArray to all members of myNumbers, returns array same length as MyNumbers, each element is array (length myFuncArray) of results of functions applied to a specific number
   console.log("do all func to all type 1",doAllFuncToAll1(myFuncArray,myNumbers));
-  // Apply every function to all members, returns array same length as functions, containg array of numbers passed into that function
+  // Apply every function in myFuncArray to all members of myNumbers, returns array same length as myFuncArray, each element is array (length MyNumbers) of results of numbers passed into a specific function
   console.log("do all func to all type 2",doAllFuncToAll2(myFuncArray,myNumbers));
   // Show how doAllFuncToAll1 and doAllFuncToAll2 return the same value with swapped indices
   console.log("type1[7][0] and type2[0][7]",doAllFuncToAll1(myFuncArray,myNumbers)[7][0],doAllFuncToAll2(myFuncArray,myNumbers)[0][7]);
