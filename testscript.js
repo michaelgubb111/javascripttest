@@ -53,11 +53,11 @@ const runcode = (code1) =>{
   // i.e. A[i][j] === B[j][i] if A = doAllFuncToAll1(f,data) and B = doAllFuncToAll2(f,data)
 
   // Pass 5 to function 0 (squareFunc)
-  console.log("5 into func0",doFunc(myFuncArray,5,0));
+  console.log("5 into func0 using doFund then directly",doFunc(myFuncArray,5,0),squareFunc(5));
   // Pass 5 to function 1 (addOneFunc)
-  console.log("5 into func1",doFunc(myFuncArray,5,1));
+  console.log("5 into func1 using doFund then directly",doFunc(myFuncArray,5,1),addOneFunc(5));
   // Pass 5 to function 2 (addOneFunc)
-  console.log("5 into func2",doFunc(myFuncArray,5,2));
+  console.log("5 into func2 using doFund then directly",doFunc(myFuncArray,5,2),returnDogFunc(5));
   // Map "function(7)" to array of functions
   console.log("7 into all func",doAllFunc(myFuncArray,7));
   // Map function 0 to myNumbers
@@ -66,7 +66,8 @@ const runcode = (code1) =>{
   console.log("do all func to all type 1",doAllFuncToAll1(myFuncArray,myNumbers));
   // Apply every function to all members, returns array same length as functions, containg array of numbers passed into that function
   console.log("do all func to all type 2",doAllFuncToAll2(myFuncArray,myNumbers));
-
+  // doAllFuncToAll1 and doAllFuncToAll2 return the same value with swapped indices
+  console.log("type1[7][0] and type2[0][7]",doAllFuncToAll1(myFuncArray,myNumbers)[7][0],doAllFuncToAll2(myFuncArray,myNumbers)[0][7]);
 
   // Can add new function to myFuncArray
   const makeNegativeFunc = (input) => {
