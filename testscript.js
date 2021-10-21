@@ -22,7 +22,7 @@ const runcode = (code1) =>{
   // Array of functions
   const myFuncArray = [squareFunc,addOneFunc,returnDogFunc];
   // Array of numbers to pass into functions
-  const myNumbers = [0,1,2,3,4,5,6,7,8,9,10];
+  const myNumbers = [0,1,2,3,4,5,6,7,8,9,10,500];
   // doFunc: lookup function in fArray using fNumber, return function(singleInput)
   const doFunc = (fArray,singleInput,fNumber) => {
     if (typeof(fArray) === "function"){return fArray(singleInput)}; // If function instead of array passed in evaluate function
