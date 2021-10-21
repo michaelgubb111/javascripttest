@@ -80,12 +80,12 @@ const runcode = (code1) =>{
   console.log("do all func to all with extra function",doAllFuncToAll2(myFuncArray,myNumbers));
 
   // Can filter 
-  console.log("filter results for numbers that when squared are greater than 6 and less than 50", doAllFuncToAll1(myFuncArray,myNumbers).filter( x => {
+  console.log("filter results for input numbers that when squared are greater than 6 and less than 50", doAllFuncToAll1(myFuncArray,myNumbers).filter( x => {
       if((x[0] > 6)&&(x[0] < 50)){return true};
         return false;
   }));
 
   // Using slice in map to do the same for type2 (indices hard coded, more steps required to find indices with code)
-  console.log("filter results (using slice and indices) for numbers that when squared are greater than 6 and less than 50", doAllFuncToAll2(myFuncArray,myNumbers).map(x => x.slice(3,-3)))
+  console.log("filter results (using slice and indices) for input numbers that when squared are greater than 6 and less than 50", doAllFuncToAll2(myFuncArray,myNumbers).map(x => x.slice(3,-3)))
 
 };
